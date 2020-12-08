@@ -20,9 +20,9 @@
 
 ## Le Lab
 
-Lab : fichier shadow à casser
+1 fichier shadow à casser + 1 dictionnaire
 
-caracteristique du MDP :
+Caracteristique du MDP :
 
 - francais en minuscule
 - francais en majuscule
@@ -34,19 +34,46 @@ caracteristique du MDP :
 
 ### I. Rappels théoriques 
 
- Expliquer la structure du fichier shadow
+**Expliquer la structure du fichier shadow**
 
- Quel est l'algo utilisé pour générer les empreinte de mdp dans le shadow
+Il contient les mots de passe hashés des utilisateurs du serveur Linux.
+
+Voici sa structure : 
+
+1) le nom de l'utilisateur
+2) le sel et le mot de passe haché
+3) La date de la dernière modification du mot de passe (exprimé en nombre de jours après le 1er janvier 1970).
+4) Le nombre de jours avant le que le mot de passe puisse être changé (0 indique qu'il peut être modifié à tout moment).
+5) Le nombre de jours après lesquels le mot de passe doit être changé (30 indique qu'après 30 jours l'utilisateur sera forcé de changer son mot de passe ; 99999 indique que l'utilisateur n'est jamais obligé de changer son mot de passe).
+6) Le nombre de jours durant lesquelles l'utilisateur sera informé de l'expiration prochaine de son mot de passe s'il se connecte au système.
+7) Le nombre de jours avant la désactivation d'un compte avec mot de passe expiré.
+8) La date de la désactivation d'un compte (exprimé en nombre de jours après le 1er janvier 1970).
+9) Un champ réservé pour une éventuelle utilisation future.
+
+
+**Quel est l'algorithme utilisé pour générer les empreintes des mdp dans le shadow ?**
+
+Sur ce shadow, les empreintes sont hashés en MD5.
+
+
+
+
+
+
+
+
 
 ## Mise en oeuvre d'un script d'attaque par force brute 
 
 ### I. Rappels théoriques 
 
-Qu'est-ce qu'une attaque par bruteforce ou recherche exhaustive ?
+**Qu'est-ce qu'une attaque par bruteforce ou recherche exhaustive ?**
+
+Une attaque par bruteforce consiste à tester toutes les combinaisons possibles pour trouver un mot de passe.
 
 ### II. Mise en oeuvre du script 
 
-Ecrire un script py qui fera du bruteforce sur les empreinte du shadow
+**Ecrire un script py réalisant une attaque par bruteforce sur les empreintes du shadow**
 
 
     lecture fichier ligne par ligne
@@ -56,17 +83,21 @@ Ecrire un script py qui fera du bruteforce sur les empreinte du shadow
     stocker les mdp bon dans un autre fichier, avec le temps de découverte pour chaque
 
 
-Tout les mdp ont-ils été trouvé ?
+**Tout les mot de passe ont-ils été trouvé ?**
+
+
 
 ## Mise en oeuvre d'un script d'attaque par dictionnaire 
 
 ### I. Rappels théoriques 
 
-Qu'est-ce qu'une attaque par dictionnaire 
+**Qu'est-ce qu'une attaque par dictionnaire ?**
+
+Une attaque par dictionnaire consiste à tester une série de mot de passe provenant d'un dictionnaire.
 
 ### II. Mise en oeuvre du script 
 
-ecrire un script py qui fais de l'attaque par dico sur les empreinte grace aux dico
+**Ecrire un script py réalisant une attaque par dictionnaire sur les empreintes du shadow**
 
     lire fichier ligne par ligne
 
@@ -74,8 +105,12 @@ ecrire un script py qui fais de l'attaque par dico sur les empreinte grace aux d
 
     stocker les mdp das un fichier de sortie avec le temps de découverte pour chaque
 
-tout les mdp ont il été trouvé ?
+**Tout les mot de passe ont-ils été trouvé ?**
 
 
 
-Expliquez les avantages et inconveniens de chacune des deux methodes
+**Expliquez les avantages et inconveniens de chacune des deux methodes**
+
+La méthode par dictionnaire est beaucoup plus rapide mais se révèlera inefficace si le mot de passe n'est pas contenu dans le dictionnaire.
+
+Il faudra alors se tourner vers le brute-force, qui est beaucoup plus long, mais pourra arriver à son but si le mot de passe n'est pas trop complexe.
