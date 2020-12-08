@@ -104,10 +104,13 @@ Une attaque par dictionnaire consiste à tester une série de mot de passe prove
     tester chaque occurence de mot contenu dans le dictionnaire
 
     stocker les mdp das un fichier de sortie avec le temps de découverte pour chaque
+    
+    
+Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_dico.py)
 
 **Tout les mot de passe ont-ils été trouvé ?**
 
-
+Nous avons pu trouver 2 sur 3. Nous avons pas trouvé celui de ``fred``.
 
 **Expliquez les avantages et inconveniens de chacune des deux methodes**
 
