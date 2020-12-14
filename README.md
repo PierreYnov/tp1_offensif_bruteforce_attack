@@ -80,7 +80,7 @@ Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offen
 
 **Tout les mot de passe ont-ils été trouvé ?**
 
-Nous avons trouvé rapidement celui, de fred. Les 2 autres sont en cours de bruteforce.
+Nous avons trouvé rapidement celui de giselle. Les 2 autres sont en cours de bruteforce.
 
 ## Mise en oeuvre d'un script d'attaque par dictionnaire 
 
