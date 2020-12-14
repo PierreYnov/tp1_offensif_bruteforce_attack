@@ -1,8 +1,8 @@
-# TP1 : Attaques sur les mots de passe
+# TP1 : Attaque sur les mots de passe
 ## Mise en oeuvre d'un script de cassage par force brute et dictionnaire
 
 ## Classe : B3B
-## Elèves : Emma Durand **[@emmadrd912](https://github.com/emmadrd912)** et Pierre Ceberio **[@PierreYnov](https://github.com/PierreYnov)** 
+## Élèves : Emma Durand **[@emmadrd912](https://github.com/emmadrd912)** et Pierre Ceberio **[@PierreYnov](https://github.com/PierreYnov)** 
 
 ![](https://blogvaronis2.wpengine.com/wp-content/uploads/2018/10/brute-force-attack.jpg)
 
@@ -10,30 +10,30 @@
 
 - [Le Lab](#le-lab)
 - [Étude du contenu du fichier shadow](#%C3%A9tude-du-contenu-du-fichier-shadow)
-    - [I. Rappels théoriques](#i-rappels-th%C3%A9oriques)
+    - [I. Rappels théorique](#i-rappels-th%C3%A9orique)
 - [Mise en oeuvre d'un script d'attaque par force brute](#mise-en-oeuvre-dun-script-dattaque-par-force-brute)
-    - [I. Rappels théoriques](#i-rappels-th%C3%A9oriques-1)
+    - [I. Rappels théorique](#i-rappels-th%C3%A9orique-1)
     - [II. Mise en oeuvre du script](#ii-mise-en-oeuvre-du-script)
 - [Mise en oeuvre d'un script d'attaque par dictionnaire](#mise-en-oeuvre-dun-script-dattaque-par-dictionnaire)
-    - [I. Rappels théoriques](#i-rappels-th%C3%A9oriques-2)
+    - [I. Rappels théorique](#i-rappels-th%C3%A9orique-2)
     - [II. Mise en oeuvre du script](#ii-mise-en-oeuvre-du-script-1)
 
 ## Le Lab
 
 1 fichier shadow à casser + 1 dictionnaire
 
-Caracteristique du MDP :
+Caractéristique du MDP :
 
 - longueur entre 6 et 12 caractères
-- francais en minuscule
-- francais en majuscule
+- français en minuscule
+- français en majuscule
 - chiffre entre 0 et 9
 - ; @ _ #
 
 
 ## Étude du contenu du fichier shadow 
 
-### I. Rappels théoriques 
+### I. Rappels théorique
 
 **Expliquer la structure du fichier shadow**
 
@@ -52,13 +52,13 @@ Voici sa structure :
 9) Un champ réservé pour une éventuelle utilisation future.
 
 
-**Quel est l'algorithme utilisé pour générer les empreintes des mdp dans le shadow ?**
+**Quel est l'algorithme utilisé pour générer les empreintes des mots de passe dans le shadow ?**
 
 Sur ce shadow, les empreintes sont hashés en MD5.
 
 ## Mise en oeuvre d'un script d'attaque par force brute 
 
-### I. Rappels théoriques 
+### I. Rappels théorique 
 
 **Qu'est-ce qu'une attaque par bruteforce ou recherche exhaustive ?**
 
@@ -66,49 +66,49 @@ Une attaque par bruteforce consiste à tester toutes les combinaisons possibles 
 
 ### II. Mise en oeuvre du script 
 
-**Ecrire un script py réalisant une attaque par bruteforce sur les empreintes du shadow**
+**Écrire un script py réalisant une attaque par bruteforce sur les empreintes du shadow**
 
 
     lecture fichier ligne par ligne
 
-    retrouver le mdp en attaque par bruteforce
+    retrouver le mot de passe en attaque par bruteforce
 
-    stocker les mdp bon dans un autre fichier, avec le temps de découverte pour chaque
+    stocker les bons mots de passe  dans un autre fichier, avec le temps de découverte pour chacuns
 
 
 Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_brute.py). Pour le lancer il suffit de taper ``python3 script_brute.py`` 
 
-**Tout les mot de passe ont-ils été trouvé ?**
+**Tous les mots de passe ont-ils été trouvés ?**
 
 Nous avons trouvé rapidement celui de giselle. Les 2 autres sont en cours de bruteforce.
 
 ## Mise en oeuvre d'un script d'attaque par dictionnaire 
 
-### I. Rappels théoriques 
+### I. Rappels théorique
 
 **Qu'est-ce qu'une attaque par dictionnaire ?**
 
-Une attaque par dictionnaire consiste à tester une série de mot de passe provenant d'un dictionnaire.
+Une attaque par dictionnaire consiste à tester une série de mots de passe provenant d'un dictionnaire.
 
 ### II. Mise en oeuvre du script 
 
-**Ecrire un script py réalisant une attaque par dictionnaire sur les empreintes du shadow**
+**Écrire un script py réalisant une attaque par dictionnaire sur les empreintes du shadow**
 
     lire fichier ligne par ligne
 
-    tester chaque occurence de mot contenu dans le dictionnaire
+    tester chaque occurrence de mot contenu dans le dictionnaire
 
-    stocker les mdp das un fichier de sortie avec le temps de découverte pour chaque
+    stocker les mots de passe dans un fichier de sortie avec le temps de découverte pour chacuns
     
     
 Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_dico.py). Pour le lancer il suffit de taper ``python3 script_dico.py``
 
-**Tout les mot de passe ont-ils été trouvé ?**
+**Tous les mots de passe ont-ils été trouvés ?**
 
-Nous avons pu trouver 2 sur 3. Nous avons pas trouvé celui de ``fred``.
+Nous avons pu trouver 2 sur 3. Nous n'avons pas trouvé celui de ``fred``.
 
-**Expliquez les avantages et inconveniens de chacune des deux methodes**
+**Expliquez les avantages et inconvénients de chacune des deux méthodes**
 
-La méthode par dictionnaire est beaucoup plus rapide mais se révèlera inefficace si le mot de passe n'est pas contenu dans le dictionnaire.
+La méthode par dictionnaire est beaucoup plus rapide, mais se révèlera inefficace si le mot de passe n'est pas contenu dans le dictionnaire.
 
 Il faudra alors se tourner vers le brute-force, qui est beaucoup plus long, mais pourra arriver à son but si le mot de passe n'est pas trop complexe.
