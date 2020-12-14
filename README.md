@@ -24,6 +24,7 @@
 
 Caracteristique du MDP :
 
+- longueur entre 6 et 12 caractères
 - francais en minuscule
 - francais en majuscule
 - chiffre entre 0 et 9
@@ -55,14 +56,6 @@ Voici sa structure :
 
 Sur ce shadow, les empreintes sont hashés en MD5.
 
-
-
-
-
-
-
-
-
 ## Mise en oeuvre d'un script d'attaque par force brute 
 
 ### I. Rappels théoriques 
@@ -83,9 +76,11 @@ Une attaque par bruteforce consiste à tester toutes les combinaisons possibles 
     stocker les mdp bon dans un autre fichier, avec le temps de découverte pour chaque
 
 
+Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_brute.py). Pour le lancer il suffit de taper ``python3 script_brute.py`` 
+
 **Tout les mot de passe ont-ils été trouvé ?**
 
-
+Nous avons trouvé rapidement celui, de fred. Les 2 autres sont en cours de bruteforce.
 
 ## Mise en oeuvre d'un script d'attaque par dictionnaire 
 
@@ -106,7 +101,7 @@ Une attaque par dictionnaire consiste à tester une série de mot de passe prove
     stocker les mdp das un fichier de sortie avec le temps de découverte pour chaque
     
     
-Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_dico.py)
+Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_dico.py). Pour le lancer il suffit de taper ``python3 script_dico.py``
 
 **Tout les mot de passe ont-ils été trouvé ?**
 
