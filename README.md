@@ -2,11 +2,11 @@
 ## Mise en oeuvre d'un script de cassage par force brute et dictionnaire
 
 ## Classe : B3B
-## Élèves : Emma Durand **[@emmadrd912](https://github.com/emmadrd912)** et Pierre Ceberio **[@PierreYnov](https://github.com/PierreYnov)** 
+## Élèves : Emma Durand **[@emmadrd912](https://github.com/emmadrd912)** et Pierre Ceberio **[@PierreYnov](https://github.com/PierreYnov)**
 
 ![](https://blogvaronis2.wpengine.com/wp-content/uploads/2018/10/brute-force-attack.jpg)
 
-# Sommaire 
+# Sommaire
 
 - [Le Lab](#le-lab)
 - [Étude du contenu du fichier shadow](#%C3%A9tude-du-contenu-du-fichier-shadow)
@@ -31,7 +31,7 @@ Caractéristique du MDP :
 - ; @ _ #
 
 
-## Étude du contenu du fichier shadow 
+## Étude du contenu du fichier shadow
 
 ### I. Rappels théorique
 
@@ -39,7 +39,7 @@ Caractéristique du MDP :
 
 Il contient les mots de passe hashés des utilisateurs du serveur Linux.
 
-Voici sa structure : 
+Voici sa structure :
 
 1) le nom de l'utilisateur
 2) le sel et le mot de passe haché
@@ -56,15 +56,15 @@ Voici sa structure :
 
 Sur ce shadow, les empreintes sont hashés en MD5.
 
-## Mise en oeuvre d'un script d'attaque par force brute 
+## Mise en oeuvre d'un script d'attaque par force brute
 
-### I. Rappels théorique 
+### I. Rappels théorique
 
 **Qu'est-ce qu'une attaque par bruteforce ou recherche exhaustive ?**
 
 Une attaque par bruteforce consiste à tester toutes les combinaisons possibles pour trouver un mot de passe.
 
-### II. Mise en oeuvre du script 
+### II. Mise en oeuvre du script
 
 **Écrire un script py réalisant une attaque par bruteforce sur les empreintes du shadow**
 
@@ -76,13 +76,31 @@ Une attaque par bruteforce consiste à tester toutes les combinaisons possibles 
     stocker les bons mots de passe  dans un autre fichier, avec le temps de découverte pour chacuns
 
 
-Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_brute.py). Pour le lancer il suffit de taper ``python3 script_brute.py`` 
+Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_brute.py). Pour le lancer il suffit de taper ``python3 script_brute.py``
+
+***Démonstration :***
+
+Pour la démonstration, n'ayant pas de PC performant, nous avons réduis la liste de caractères.
+
+![](img/brute-force0.png)
+
+> La liste contient les lettres du mot de passe "brazil" pour pouvoir le trouver facilement.
+
+Une fois le script lancé, on attent. Lorsque une réponse s'affiche, cela veut dire qu'un mot de passe a été trouvé. Le mot de passe s'affiche dans le terminal mais aussi, s'écrit dans un fichier .txt que le script va créer.
+
+Le fichier contenant les mot de passe s'appelle : ```password_decrypt_brute.txt```. Si on le ```cat```, on voit que le mot de passe est renseigné dedans.
+
+![](img/brute-force.png)
+
+![](img/brute-force2.png)
+
+> Le fichier contient le mot de passe ainsi que le temps qu'a mis le script à le découvrir.
 
 **Tous les mots de passe ont-ils été trouvés ?**
 
 Nous avons trouvé rapidement celui de giselle. Les 2 autres sont en cours de bruteforce.
 
-## Mise en oeuvre d'un script d'attaque par dictionnaire 
+## Mise en oeuvre d'un script d'attaque par dictionnaire
 
 ### I. Rappels théorique
 
@@ -90,7 +108,7 @@ Nous avons trouvé rapidement celui de giselle. Les 2 autres sont en cours de br
 
 Une attaque par dictionnaire consiste à tester une série de mots de passe provenant d'un dictionnaire.
 
-### II. Mise en oeuvre du script 
+### II. Mise en oeuvre du script
 
 **Écrire un script py réalisant une attaque par dictionnaire sur les empreintes du shadow**
 
@@ -99,9 +117,17 @@ Une attaque par dictionnaire consiste à tester une série de mots de passe prov
     tester chaque occurrence de mot contenu dans le dictionnaire
 
     stocker les mots de passe dans un fichier de sortie avec le temps de découverte pour chacuns
-    
-    
+
+
 Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offensif_bruteforce_attack/blob/main/script_dico.py). Pour le lancer il suffit de taper ``python3 script_dico.py``
+
+***Démonstration :***
+
+Une fois le script lancé, on attend. Lorsque un mot de passe est trouvé, il s'affiche sur le terminal et s'ecrit dans un fichier .txt que le script créer.
+
+![](img/dico.png)
+
+> Une fois le script effectué, on peut lire le fichier contenant les mot de passe ```password_decrypt_dico.txt```. Le fichier contient le mot de passe ainsi que le temps qu'a mis le script à le découvrir.
 
 **Tous les mots de passe ont-ils été trouvés ?**
 
