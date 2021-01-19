@@ -80,15 +80,15 @@ Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offen
 
 ***Démonstration :***
 
-Pour la démonstration, n'ayant pas de PC performant, nous avons réduis la liste de caractères.
+Pour la démonstration, n'ayant pas de PC performant, nous avons réduit la liste de caractères.
 
 ![](img/brute-force0.png)
 
 > La liste contient les lettres du mot de passe "brazil" pour pouvoir le trouver facilement.
 
-Une fois le script lancé, on attent. Lorsque une réponse s'affiche, cela veut dire qu'un mot de passe a été trouvé. Le mot de passe s'affiche dans le terminal mais aussi, s'écrit dans un fichier .txt que le script va créer.
+Une fois le script lancé, on attend. Lorsqu'une réponse s'affiche, cela veut dire qu'un mot de passe a été trouvé. Le mot de passe s'affiche dans le terminal, mais aussi, s'écrit dans un fichier .txt que le script va créer.
 
-Le fichier contenant les mot de passe s'appelle : ```password_decrypt_brute.txt```. Si on le ```cat```, on voit que le mot de passe est renseigné dedans.
+Le fichier contenant les mots de passe s'appelle : ```password_decrypt_brute.txt```. Si on le ```cat```, on voit que le mot de passe est renseigné dedans.
 
 ![](img/brute-force.png)
 
@@ -123,11 +123,11 @@ Vous pouvez retrouver notre script [ici](https://github.com/PierreYnov/tp1_offen
 
 ***Démonstration :***
 
-Une fois le script lancé, on attend. Lorsque un mot de passe est trouvé, il s'affiche sur le terminal et s'ecrit dans un fichier .txt que le script créer.
+Une fois le script lancé, on attend. Lorsqu'un mot de passe est trouvé, il s'affiche sur le terminal et s'écrit dans un fichier .txt que le script créer.
 
 ![](img/dico.png)
 
-> Une fois le script effectué, on peut lire le fichier contenant les mot de passe ```password_decrypt_dico.txt```. Le fichier contient le mot de passe ainsi que le temps qu'a mis le script à le découvrir.
+> Une fois le script effectué, on peut lire le fichier contenant les mots de passe ```password_decrypt_dico.txt```. Le fichier contient le mot de passe ainsi que le temps qu'a mis le script à le découvrir.
 
 **Tous les mots de passe ont-ils été trouvés ?**
 
